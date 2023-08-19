@@ -1,0 +1,40 @@
+<template>
+  <div id="piechart" style="width: 900px; height: 500px;"></div>
+</template>
+
+<script>
+import {GoogleCharts} from 'google-charts';
+export default {
+  mounted() {
+    // GoogleCharts.load("current", { packages: ["corechart"] });
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    GoogleCharts.load(this.drawChart);
+  },
+  methods: {
+    drawChart() {
+      let data = google.visualization.arrayToDataTable([
+        ["Task", "Hours per Day"],
+        ["Work", 11],
+        ["Eat", 2],
+        ["Commute", 2],
+        ["Watch TV", 2],
+        ["Sleep", 7]
+      ]);
+
+      let options = {
+        title: "Mis estadisticas"
+      };
+
+      let chart = new google.visualization.PieChart(
+        document.getElementById("piechart")
+      );
+
+      chart.draw(data, options);
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+</style>

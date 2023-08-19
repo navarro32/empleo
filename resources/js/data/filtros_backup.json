@@ -1,0 +1,183 @@
+[
+    {
+        "name": "Tipo de contrato",
+        "type": "check",
+        "campo": "",
+        "campos": [
+            {
+                "id":1,
+                "campo": "tipo",
+                "valor": "Indefinido"
+            },
+            {
+                "id":2,
+                "campo": "tipo",
+                "valor": "Por Obra o labor"
+            },
+            {
+                "id":3,
+                "campo": "tipo",
+                "valor": "Fijo"
+            },
+            {
+                "id":4,
+                "campo": "tipo",
+                "valor": "Prestación de servicios"
+            }
+        ]
+    },
+    {
+        "name": "Experiencia",
+        "type": "check",
+        "campo": "",
+        "campos": [
+            {
+                "campo": "exp",
+                "id":1,
+                "valor": "Primer empleo"
+            },
+            {
+                "campo": "exp",
+                "id":2,
+                "valor": "Menor de 6 meses"
+            },
+            {
+                "id":3,
+                "campo": "exp",
+                "valor": "Menor de 1 año"
+            },
+            {
+                "id":4,
+                "campo": "exp",
+                "valor": "Entre 1 y 2 años"
+            },
+            {
+                "id":5,
+                "campo": "exp",
+                "valor": "Entre 2 y 5 años"
+            },
+            {
+                "id":6,
+                "campo": "exp",
+                "valor": "Entre 5 y 10 años"
+            },
+            {
+                "id":7,
+                "campo": "exp",
+                "valor": "Mayor a 10 años"
+            }
+        ]
+    },
+    {
+        "name": "Sueldo",
+        "type": "range",
+        "campo": [0, 3],
+        "campos": [
+            {
+                "campo" :"sueldo",
+                "id": 1,
+                "valor": "$ 650.000"
+            },
+            {
+                "campo" :"sueldo",
+                "id": 2,
+                "valor": "$ 1.000.000"
+            },
+            {
+                "campo" :"sueldo",
+                "id": 3,
+                "valor": "$ 1.500.000"
+            },
+            {
+                "campo" :"sueldo",
+                "id": 5,
+                "valor": "$ 2.000.000"
+            },
+            {
+                "campo" :"sueldo",
+                "id": 6,
+                "valor": "$ 2.500.000"
+            },
+            {
+                "campo" :"sueldo",
+                "id": 7,
+                "valor": "$ 3.000.000"
+            },
+            {
+                "campo" :"sueldo",
+                "id": 8,
+                "valor": "$ 3.500.000"
+            },
+            {
+                "campo" :"sueldo",
+                "id": 9,
+                "valor": "$ 4.000.000"
+            },
+            {
+                "campo" :"sueldo",
+                "id": 10,
+                "valor": "$ 4.500.000"
+            },
+            {
+                "campo" :"sueldo",
+                "id": 11,
+                "valor": "$ 5.000.000"
+            },
+            {
+                "campo" :"sueldo",
+                "id": 12,
+                "valor": "$ 6.000.000"
+            },
+            {
+                "campo" :"sueldo",
+                "id": 13,
+                "valor": "$ 7.000.000"
+            },
+            {
+                "campo" :"sueldo",
+                "id": 14,
+                "valor": "$ 8.000.000"
+            },
+            {
+                "campo" :"sueldo",
+                "id": 15,
+                "valor": "$ 9.000.000"
+            },
+            {
+                "campo" :"sueldo",
+                "id": 16,
+                "valor": "$ 10.000.000"
+            },
+            {
+                "campo" :"sueldo",
+                "id": 17,
+                "valor": "$ 11.000.000"
+            },
+            {
+                "campo" :"sueldo",
+                "id": 18,
+                "valor": "$ 12.000.000"
+            },
+            {
+                "campo" :"sueldo",
+                "id": 19,
+                "valor": "$ 13.000.000"
+            },
+            {
+                "campo" :"sueldo",
+                "id": 20,
+                "valor": "$ 14.000.000"
+            },
+            {
+                "campo" :"sueldo",
+                "id": 21,
+                "valor": "$ 15.000.000"
+            },
+            {
+                "campo" :"sueldo",
+                "id": 22,
+                "valor": " > $ 20.000.000"
+            }
+        ]
+    }
+]
