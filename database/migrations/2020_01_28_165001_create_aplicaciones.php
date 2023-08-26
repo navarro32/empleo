@@ -20,7 +20,7 @@ class CreateAplicaciones extends Migration
             $table->date('fecha_aplicacion')->default(now()->format('Y-m-d'));
             $table->json('ofertas');
             $table->json('fechas');
-            $table->foreign('empresa_id')->references('id')->on('empresas');
+            $table->foreign('empresa_id')->references('id')->on('users');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
