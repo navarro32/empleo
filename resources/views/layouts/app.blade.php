@@ -54,7 +54,7 @@
             <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="d-lg-none"></v-app-bar-nav-icon>
             @endguest
             <v-toolbar-title>
-                <a href="{{ url('/') }}"><img class="logo" src="{{ asset('images/empleo.png') }}" alt="Logo Generación de talentos empleo"></a>
+                <a href="{{ url('/') }}"><img class="logo" src="{{ asset('images/empleo.png') }}" alt="Logo  empleo"></a>
             </v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items class="hidden-sm-and-down">
@@ -77,7 +77,7 @@
             @yield('content')
         </main>
         <footer class="footer text-center p-5">
-            &copy; Todos los derechos reservados Generación de talentos
+            &copy; Todos los derechos reservados 
         </footer>
     </div>
 
