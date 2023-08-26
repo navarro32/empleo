@@ -35,6 +35,14 @@ import { store } from './store/public.js'
 // var VueCookie = require('vue-cookie');
 Vue.use(Vuetify);
 
+import Vuesax from 'vuesax'
+
+import 'vuesax/dist/vuesax.css' //Vuesax styles
+Vue.use(Vuesax, {
+  // options here
+})
+
+
 // Tell Vue to use the plugin
 // Vue.use(VueCookie);
 
@@ -45,6 +53,19 @@ const app = new Vue({
         collapseOnScroll: true,
         drawer:false,
         activeUser:true
+      }
+    },
+    methods: {
+      openNotification(color, title, text) {
+        const noti = this.$vs.notification({
+          square: true,
+          progress: 'auto',
+          color,
+          duration:'6000',
+          position:'top-right',
+          title,
+          text
+        })
       }
     },
     store,

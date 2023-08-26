@@ -44,7 +44,17 @@
 
 <script>
 export default {
-  props: ["user", "basicos"],
+  
+  props: {
+    user: {
+      type: Object,
+      default: {}
+    },
+    basicos:{
+      type: Object,
+      default: {}
+    }
+  },
   data: () => ({
     fav: true,
     menu: false,

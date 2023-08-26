@@ -11,6 +11,8 @@
 |
 */
 
+use App\User;
+
 Route::get('/', function () {
     // if(Auth::check()){
     //     if(Auth::user()->tipo_user==2){
@@ -22,6 +24,10 @@ Route::get('/', function () {
     return view('inicio');
 });
 
+
+Route::get('/listado_usuarios', function(){
+    return User::select('nombres', 'apellidos', 'email')->get()->toJson();
+});
 
 // Auth::routes();
 // Authentication Routes...

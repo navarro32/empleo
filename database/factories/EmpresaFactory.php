@@ -16,13 +16,13 @@ use Faker\Generator as Faker;
 
 $factory->define(Empresa::class, function (Faker $faker) {
     return [
-        'user_id'       =>  $faker->unique()->numberBetween(1, App\User::count()),
+        // 'user_id'       =>  $faker->unique()->numberBetween(1, App\User::count()),
         'razon_social'  =>  $faker->company,
         'nit'           =>  $faker->unique()->numberBetween(100000000, 999999999),
         'direccion'     =>  $faker->address,
         'telefono'      =>  $faker->numerify('########'),
         'url'           =>  $faker->url,
-        'logo'           => $faker->imageUrl(),
+        'logo'           => url('/')."/images/default.jpg", // $faker->imageUrl(),
         'descripcion'   => '<div><b>' . $faker->sentence(3) . '</b>' . $faker->sentence(5) .  '</div><div>' . $faker->text(250) . '</div>'
     ];
 });

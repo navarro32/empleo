@@ -24,7 +24,7 @@ class EmpleosController extends Controller
     public function Buscar(Request $request)
     {
         $this->validate($request, [
-            'campo'                 => 'string|required',
+            'campo'                 => 'string|nullable',
             'depar'                => is_array($request->depar) ? 'required|array' : 'required|string|max:3',
             'filtros' => 'required|array',
             'tipo' => 'required|string|max:1'

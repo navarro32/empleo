@@ -17,6 +17,7 @@ class CreateAplicaciones extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('empresa_id');
             $table->unsignedBigInteger('user_id');
+            $table->date('fecha_aplicacion')->default(now()->format('Y-m-d'));
             $table->json('ofertas');
             $table->json('fechas');
             $table->foreign('empresa_id')->references('id')->on('empresas');

@@ -13,7 +13,7 @@
             class="col-12 mt-3"
             label="Busca tu empleo deseado..."
             clearable
-            @change="search(true)"
+            @keyup="limpiarUrl()"
           ></v-text-field>
         </div>
         <div class="col-12 col-sm-12 col-md-4 pb-0 mb-0 pt-0 mt-0">
@@ -221,7 +221,7 @@ export default {
           : this.depart;
       let tipo = this.tipo_bus;
       let busquedad = {
-        campo,
+        campo:this.campo,
         depar,
         tipo,
         filtros: this.filtros,
@@ -235,7 +235,10 @@ export default {
         // this.$refs.lista.$refs.InfiniteComponent.stateChanger.loaded()
         this.infinitieId += 1;
       }else{
-        this.buscar()
+        setTimeout(() => {
+          this.buscar()
+      }, 500);
+       
       }
       
       
@@ -249,7 +252,7 @@ export default {
       history.pushState(null, "", "?" + new_params);
       this.depart = this.departamentos
       setTimeout(() => {
-        this.search(true)
+        this.search()
       }, 100);
     },
     updateUrlParameter() {
@@ -267,8 +270,9 @@ export default {
           .filter((fil) => fil != "");
         if (filtros.length > 0) {
           let new_params = params[0] + "&" + filtros.join("&");
-          let newUrl = `${url[0]}?${new_params}`;
+          let newUrl = `${url[0]}?${new_params}`;          
           history.pushState(null, "", "?" + new_params);
+          
         }
       }
     },
@@ -294,6 +298,21 @@ export default {
         return option;
       });
     },
+    limpiarUrl(){
+      const url = new URL(window.location.href);
+      // Obtén el valor actual del parámetro 'param1'
+      // const currentValue = url.searchParams.get('campo');
+
+      // Cambia el valor del parámetro 'param1' a 'newvalue'
+      url.searchParams.set('campo', this.campo);
+
+      // Obtén la nueva URL con el parámetro modificado
+      const newUrl = url.toString();
+
+      // Cambia la URL actual a la nueva URL con el parámetro modificado
+      window.history.replaceState({}, '', newUrl);
+      this.search()
+    }
   },
 };
 </script>

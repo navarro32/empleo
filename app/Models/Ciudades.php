@@ -15,7 +15,7 @@ class Ciudades extends Model
     ];    
 
     protected $hidden = [
-        'created_at', 'updated_at', 'deleted_at', 'id', 'departamento_id'
+        'created_at', 'updated_at', 'deleted_at',  'departamento_id'
     ];
     protected $appends  = ['key', 'departamento_key'];
 

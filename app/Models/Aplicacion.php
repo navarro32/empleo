@@ -13,7 +13,7 @@ class Aplicacion extends Model
 
     protected $table = 'aplicaciones';
     protected $fillable = [
-        'empresa_id', 'user_id', 'ofertas', 'fechas'
+        'empresa_id', 'user_id', 'ofertas', 'fechas', 'fecha_aplicacion'
     ];
     protected $hidden = [
         'created_at', 'updated_at', 'user_id'

@@ -29,7 +29,7 @@
                                 <div class="input-group-prepend">
                                     <i class="material-icons input-group-text" style="display: flex;    align-items: center; font-size: 1.4rem;    padding: 0 10px;">fingerprint</i>
                                 </div>
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Ingresa tu contraseña">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" value="password" placeholder="Ingresa tu contraseña">
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

@@ -5,6 +5,14 @@
   */
 
 /*!
+  * Vuesax v4.0.1-alpha.15 🖖 (https://lusaxweb.github.io/vuesax/)
+  * Forged by Luis Daniel Rovira
+  * Released under the MIT License.
+  * Donate: https://www.patreon.com/bePatron?c=1567892
+  * © 2019, Lusaxweb. (https://lusaxweb.net)
+  */
+
+/*!
   * vue-router v3.1.6
   * (c) 2020 Evan You
   * @license MIT
