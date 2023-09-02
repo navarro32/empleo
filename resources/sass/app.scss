@@ -1,0 +1,96 @@
+// Fonts
+// @import url('https://fonts.googleapis.com/css?family=Nunito');
+// Variables
+@import 'variables';
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+// Vuetify
+@import '~vuetify/dist/vuetify.min.css';
+@import '~@mdi/font/css/materialdesignicons.min.css';
+@import '~animate.css/animate.min.css';
+.header {
+    background-image: url("/images/fondo.jpg");
+    height: 90vh;
+    background-size: cover;
+    background-attachment: fixed;
+    align-items: center;
+    ;
+}
+
+.logo {
+    width: 150px;
+}
+
+#menu {
+    max-height: 90px;
+}
+
+.caja_busquedad {
+    justify-content: center;
+    margin: 0 auto;
+    max-height: 250px;
+}
+
+.sticky {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    height: 80px;
+}
+
+#menu .nav-item .nav-link {
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+#menu .nav-item .nav-link::after {
+    display: flex;
+    content: '';
+    border-bottom: solid 2px #000000;
+    border-radius: 5px;
+    -webkit-transform-origin: 0 50%;
+    -ms-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: -webkit-transform 250ms ease-in-out;
+    transition: -webkit-transform 250ms ease-in-out;
+    -o-transition: transform 250ms ease-in-out;
+    transition: transform 250ms ease-in-out;
+    transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+    position: relative;
+    top: 3px;
+}
+
+#menu .nav-item .nav-link:hover:after {
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+#menu .nav-item .nav-link:hover {
+    font-weight: bold;
+}
+
+.footer {
+    background-color: #4a4a4a33;
+}
+
+label {
+    margin-bottom: 0;
+}
+
+.v-input input {
+    padding-left: 10px;
+}
+
+.title-ofert {
+    font-size: 1.5rem;
+}
+.h4-ofert{
+    font-size: 1.2rem;
+}
+.v-input input{
+    padding-left: 0 !important;
+}

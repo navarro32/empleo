@@ -1,0 +1,16 @@
+// Fonts
+// @import url('https://fonts.googleapis.com/css?family=Nunito');
+// Variables
+// @import 'variables';
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import './styles.css';
+// Vuetify
+@import '~vuetify/dist/vuetify.min.css';
+@import '~@mdi/font/css/materialdesignicons.min.css';
+@media (max-width: 991px) {
+    .container-sm,
+    .container {
+        max-width: 98% !important;
+    }
+}

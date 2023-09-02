@@ -1,0 +1,14 @@
+query oferta($id: Int!) {
+    oferta(id: $id) {
+        titulo,
+        sueldo,
+        ciudad_id,
+        area_id,
+        user_id,
+        vacantes,
+        descripcion,
+        experiencia,
+        contrato,
+        estado
+    }
+}
