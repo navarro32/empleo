@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <v-form ref="form" class="row" @submit.prevent="submit">
+    <v-form ref="form" class="row" @submit.prevent="submit"  dusk="formulario_envio">
       <v-row class="col-12 col-md-8 offset-md-2 row shadow-lg shadow-lg">
         <div class="col-12">
           <h1 class="titulos m-0 font-weight-bold">Crear Oferta</h1>
@@ -9,6 +9,7 @@
           <v-text-field
             v-model="datos.nombres"
             :error-messages="nombreErrors"
+            id="oferta"
             :counter="255"
             label="Digita el cargo o el nombre de la oferta"
             required
@@ -19,6 +20,7 @@
         <div class="col-6 col-md-6 pt-0 pb-0">
           <v-text-field
             label="Sueldo"
+            id="sueldo"
             v-model="datos.sueldo"
             @input="$v.datos.sueldo.$touch()"
             @blur="$v.datos.sueldo.$touch()"
@@ -31,9 +33,11 @@
         <div class="col-6 col-md-6 pt-0 pb-0 d-flex">
           <p class="mb-0 d-flex align-items-center">${{ formatMoney(datos.sueldo) }}</p>
         </div>
-        <div class="col-12 col-md-12 pt-0 pb-0">
+        <div class="col-12 col-md-12 pt-0 pb-0" id="div_areas">
           <v-autocomplete
+         
             :items="areas"
+            id="area"
             color="blue"
             item-text="area"
             item-value="id"
@@ -46,6 +50,7 @@
         </div>
         <div class="col-12 col-md-6 pt-0 pb-0">
           <v-autocomplete
+            id="departamento"
             :items="departamentos"
             color="blue"
             item-text="departamento"
@@ -59,6 +64,7 @@
         </div>
         <div class="col-12 col-md-6 pt-0 pb-0">
           <v-autocomplete
+          id="ciudad"
             :items="ciudades"
             color="blue"
             :loading="isLoading"
@@ -73,6 +79,7 @@
         </div>
         <div class="col-12 col-md-6 pt-0 pb-0">
           <v-text-field
+            id="vacante"
             v-model="datos.vacantes"
             label="Digita la cantidad de vacantes"
             type="number"
@@ -84,6 +91,7 @@
         </div>
         <div class="col-7 col-md-7 pt-0 pb-0">
           <v-text-field
+            id="experiencia"
             v-model="datos.experiencia"
             label="Digita la cantidad de experiencia"
             min="0"
@@ -98,6 +106,7 @@
         </div>
         <div class="col-5 col-md-5 pt-0 pb-0">
           <v-select
+            id="tipo_fecha"
             v-model="datos.tipoFecha"
             :items="tipoFecha"
             item-text="tipo"
@@ -110,6 +119,7 @@
         </div>
         <div class="col-12 col-md-8 pt-0 pb-0">
           <v-select
+          id="tipo_contrato"
             v-model="datos.contrato"
             :items="tipoContrato"
             item-text="tipo"
@@ -126,6 +136,7 @@
             :class="{ 'text-error': descErrors[0] }"
           >Descripción de la oferta</label>
           <ckeditor
+            id="texto_textarea"
             @change="$v.datos.descripcion.$touch()"
             :editor="editor"
             v-model="datos.descripcion"
@@ -170,6 +181,7 @@
         </div>
           <p class="typo__p" v-if="submitStatus === 'PENDING'">Enviando...</p>
           <v-btn
+          id="guardar"
             class="ma-2"
             type="submit"
             tile
@@ -464,7 +476,7 @@ export default {
         .finally(() => (this.isLoading = false));
     },
     submit() {
-      console.log("submit!");
+      console.log("Datos enviados:", JSON.stringify(this.datos));
       this.$v.$touch();
       if (this.$v.$invalid) {
         this.submitStatus = "ERROR";
@@ -473,6 +485,9 @@ export default {
         this.submitStatus = "PENDING";
         axios.post('/saveOfert', this.datos)
         .then((response)=>{
+          console.log(response)
+          console.log(response.status)
+          console.log(response.statusText)
            if (response.data.tipo == 0) {
               this.errores = response.data.mensaje;
               this.color = "red";
@@ -486,6 +501,7 @@ export default {
          
         })
         .catch(function (error) {
+          console.log("dio error")
           console.log(error);
         });
       }

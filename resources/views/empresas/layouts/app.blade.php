@@ -31,7 +31,7 @@
 <body>
     <div id="app">
         <v-app id="inspire">
-            <menutoolbar ref="componenteMenu" datos="{{ $datos }}" href="{{ route('logout') }}"></menutoolbar>
+            <menutoolbar dusk="menu" ref="componenteMenu" datos="{{ $datos }}" href="{{ route('logout') }}"></menutoolbar>
             <v-content>
                 <v-container fluid fill-height>
                     <v-layout>

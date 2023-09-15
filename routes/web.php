@@ -26,7 +26,7 @@ Route::get('/', function () {
 
 
 Route::get('/listado_usuarios', function(){
-    return User::select('nombres', 'apellidos', 'email', 'tipo_user')->get()->toJson();
+    return response()->json(User::select('nombres', 'apellidos', 'email', 'tipo_user')->get()->toArray()) ;
 });
 
 // Auth::routes();

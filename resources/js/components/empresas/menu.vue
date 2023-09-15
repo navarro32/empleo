@@ -6,6 +6,7 @@
         <v-list-item-group color="primary">
           <router-link
             :to="item.action"
+            :id="item.id"
             v-slot="{ href, route, navigate, isActive, isExactActive }"
             v-for="(item, i) in items"
             :key="i"
@@ -37,7 +38,7 @@
       </v-avatar>
       <v-menu v-model="menu" transition="slide-y-transition" bottom>
         <template v-slot:activator="{ on }">
-          <v-btn icon v-on="on">
+          <v-btn id="boton_perfil" icon v-on="on">
             <v-icon>mdi-dots-vertical</v-icon>
           </v-btn>
         </template>
@@ -130,16 +131,18 @@ export default {
     message: false,
     hints: true,
     items: [
-      { text: "Estadisticas", icon: "mdi-poll", action: "/Estadisticas" },
+      { text: "Estadisticas", icon: "mdi-poll", action: "/Estadisticas", id:"estadisticas_boton" },
       {
         text: "Ofertas Publicadas",
         icon: "mdi-clipboard-list-outline",
-        action: "/Ofertas"
+        action: "/Ofertas",
+        id:"ofertas_boton"
       },
       {
         text: "Publicar Oferta",
         icon: "mdi-newspaper-plus",
-        action: "/nuevaOferta"
+        action: "/nuevaOferta",
+        id:"nueva_oferta_boton"
       }
     ],
     csrf: document
