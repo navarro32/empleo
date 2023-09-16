@@ -67,7 +67,7 @@ class EmpleosController extends Controller
 
         if ($request->filtros) {
             foreach ($request->filtros as $key => $value) {
-                if ($value['field'] == 'contrato' && !is_null($value['campo'])) {
+                if ($value['field'] == 'contrato' && !is_null($value['campo']) && $value['campo']!="") {
                     // filtro por contrato
                     $ofertas = $ofertas->whereIn($value['field'], $value['campo']);
                 } elseif ($value['field'] == 'experiencia' && !is_null($value['campo'])) {

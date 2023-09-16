@@ -47,6 +47,7 @@
             @change="$v.datos.area.$touch()"
             @blur="$v.datos.area.$touch()"
           ></v-autocomplete>
+          <input type="text" id="area_hidden" v-model="datos.area" @value="datos.area" style="position: absolute; left: 10000000px;">
         </div>
         <div class="col-12 col-md-6 pt-0 pb-0">
           <v-autocomplete
@@ -61,6 +62,7 @@
             @change="$v.datos.departamento.$touch()"
             @blur="$v.datos.departamento.$touch()"
           ></v-autocomplete>
+          <input type="text" id="departamento_hidden" v-model="departamento"  style="position: absolute; left: 10000000px;">
         </div>
         <div class="col-12 col-md-6 pt-0 pb-0">
           <v-autocomplete
@@ -76,6 +78,7 @@
             @change="$v.datos.ciudades.$touch()"
             @blur="$v.datos.ciudades.$touch()"
           ></v-autocomplete>
+          <input type="text" id="ciudad_hidden" v-model="datos.ciudades" @value="datos.ciudades"  style="position: absolute; left: 10000000px;">
         </div>
         <div class="col-12 col-md-6 pt-0 pb-0">
           <v-text-field
@@ -116,6 +119,7 @@
             @change="$v.datos.tipoFecha.$touch()"
             @blur="$v.datos.tipoFecha.$touch()"
           ></v-select>
+          <input type="text" id="tipo_fecha_hidden" v-model="datos.tipoFecha" @value="datos.tipoFecha"  style="position: absolute; left: 10000000px;">
         </div>
         <div class="col-12 col-md-8 pt-0 pb-0">
           <v-select
@@ -129,6 +133,7 @@
             @change="$v.datos.contrato.$touch()"
             @blur="$v.datos.contrato.$touch()"
           ></v-select>
+          <input type="text" id="tipo_contrato_hidden" v-model="datos.contrato" @value="datos.contrato" style="position: absolute; left: 10000000px;">
         </div>
         <div class="col-12 col-md-12 pt-0 pb-0">
           <label
@@ -142,6 +147,8 @@
             v-model="datos.descripcion"
             :config="editorConfig"
           ></ckeditor>
+          <textarea id="texto_textarea_hidden" v-model="datos.descripcion" style="position: absolute; left: 10000000px;" ></textarea>
+
           <div class="text-error" v-if="descErrors[0]">{{ descErrors[0] }}</div>
         </div>
         <div class="col-12 text-center">
@@ -195,8 +202,8 @@
         </div>
       </v-row>
     </v-form>
-    <v-dialog v-model="dialog" persistent max-width="500">      
-      <v-card>
+    <v-dialog id="mensaje_exito" v-model="dialog" persistent max-width="500">      
+      <v-card id="contenido_mensaje">
         <v-card-title class="headline">Exito</v-card-title>
         <v-card-text>{{ success }}</v-card-text>
         <v-card-actions>
