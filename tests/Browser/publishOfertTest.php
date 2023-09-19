@@ -16,19 +16,10 @@ class publishOfertTest extends DuskTestCase
      */
     public function testExample()
     {
-
-        // $user = factory(User::class)->create([
-        //     'email' => 'taylor@laravel.com',
-        // ]);     
-
-
         // {"nombres":"pruebas","sueldo":"2000000","area":4,"departamento":11,"ciudades":149,"vacantes":"2","experiencia":"2","tipoFecha":2,"contrato":2,"descripcion":"<p>Pruebas</p>"}
         $user = User::where('tipo_user', 2)->first();
         $this->browse(function ($browser) use ($user) {
-
-
-
-            $selector = "//div[id='div_areas']//input[type='hidden']";
+            
             $browser->visit('/empresas/login')
                 ->type('email', $user->email)
                 ->type('password', 'password')
@@ -52,10 +43,9 @@ class publishOfertTest extends DuskTestCase
                 ->type('#experiencia', 2)
                 ->type('#tipo_fecha_hidden', '2')
                 ->type('#tipo_contrato_hidden', '2')
-                ->type('#texto_textarea_hidden', 'Prueba de oferta')                
+                ->type('#texto_textarea_hidden', 'Prueba de oferta')
                 ->press('#guardar');
-                $browser->script('console.log("################ Se envio correctamente el formulario ###################");');
-            ;
+            $browser->script('console.log("################ Se envio correctamente el formulario ###################");');;
         });
     }
 }
