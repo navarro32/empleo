@@ -66,6 +66,7 @@
         </div>
         <div class="col-12 col-md-6 pt-0 pb-0">
           <v-autocomplete
+          ref="ciudades"
           id="ciudad"
             :items="ciudades"
             color="blue"
@@ -473,7 +474,7 @@ export default {
             EventBus.$emit('session');            
           }else{
             this.ciudades = response.data;
-            this.datos.ciudades = null
+            this.datos.ciudades = ""
           }
           
         })
