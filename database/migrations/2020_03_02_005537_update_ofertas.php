@@ -14,7 +14,7 @@ class UpdateOfertas extends Migration
     public function up()
     {
         Schema::table('ofertas', function($table) {
-            $table->uuid('uuid');
+            $table->uuid('uuid')->nullable();
         });
     }
 
