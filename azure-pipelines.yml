@@ -50,6 +50,7 @@ stages:
         php -version   
         php -m 
         cp .env.example .env && php artisan key:generate
+        sudo touch database/database.sqlite
         php artisan config:cache
         unzip json.zip -d storage/app/
         php artisan migrate:fresh --seed
