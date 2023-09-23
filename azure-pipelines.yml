@@ -42,7 +42,9 @@ stages:
     - script: |
         composer install --no-interaction --prefer-dist --ignore-platform-reqs        
       displayName: 'Instalar paquetes de composer'
-    - script: |        
+    - script: |    
+        php -version   
+        php -m 
         cp .env.example .env && php artisan key:generate
         php artisan test
       displayName: 'Pruebas de caja blanca'  
