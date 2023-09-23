@@ -35,6 +35,7 @@ stages:
         sudo apt-get install -y php7.4-dom
         sudo apt-get install -y php7.4-mbstring
         sudo apt-get install php7.4-sqlite3 -y
+        sudo apt-get install php-gmp php7.4-gmp -y
         sudo update-alternatives --set php /usr/bin/php$(phpVersion)
         sudo update-alternatives --set phar /usr/bin/phar$(phpVersion)
         sudo update-alternatives --set phpdbg /usr/bin/phpdbg$(phpVersion)
