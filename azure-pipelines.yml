@@ -46,13 +46,18 @@ stages:
     - script: |
         composer install --no-interaction --prefer-dist --ignore-platform-reqs        
       displayName: 'Instalar paquetes de composer'
-    - script: |    
+    - script: |
         php -version   
         php -m 
         cp .env.example .env && php artisan key:generate
         sudo touch database/database.sqlite
+        sudo chmod 777 database/database.sqlite
+        sudo chmod 755 storage/ -R
+        sudo chmod 755 vendor/ -R
         php artisan config:cache
-        unzip json.zip -d storage/app/
+        unzip json.zip -d storage/app/ 
+      displayName: 'Configuración de Laravel'  
+    - script: | 
         php artisan migrate:fresh --seed
         php artisan test
       displayName: 'Pruebas de caja blanca'  
