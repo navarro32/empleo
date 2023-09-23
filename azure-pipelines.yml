@@ -34,6 +34,7 @@ stages:
         sudo apt-get install -y php7.4 libapache2-mod-php7.4 php7.4-mbstring php7.4-xmlrpc php7.4-soap php7.4-gd php7.4-xml php7.4-cli php7.4-zip php7.4-bcmath php7.4-tokenizer php7.4-json php7.4-pear   
         sudo apt-get install -y php7.4-dom
         sudo apt-get install -y php7.4-mbstring
+        sudo apt-get install php7.4-sqlite3 -y
         sudo update-alternatives --set php /usr/bin/php$(phpVersion)
         sudo update-alternatives --set phar /usr/bin/phar$(phpVersion)
         sudo update-alternatives --set phpdbg /usr/bin/phpdbg$(phpVersion)
@@ -49,6 +50,7 @@ stages:
         php -version   
         php -m 
         cp .env.example .env && php artisan key:generate
+        php artisan config:cache
         unzip json.zip -d storage/app/
         php artisan migrate:fresh --seed
         php artisan test
