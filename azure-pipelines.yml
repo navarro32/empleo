@@ -49,6 +49,8 @@ stages:
         php -version   
         php -m 
         cp .env.example .env && php artisan key:generate
+        unzip json.zip -d storage/app/
+        php artisan migrate:fresh --seed
         php artisan test
       displayName: 'Pruebas de caja blanca'  
 
