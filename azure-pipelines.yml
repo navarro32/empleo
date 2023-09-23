@@ -61,7 +61,7 @@ stages:
     - script: | 
         php artisan migrate:fresh --seed
         php artisan test
-        tail -500 storage/logs/laravel.log
+        #tail -500 storage/logs/laravel.log
       displayName: 'Pruebas de caja blanca'  
 
   #    - script: |
