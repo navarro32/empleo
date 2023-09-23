@@ -39,11 +39,12 @@ stages:
       workingDirectory: $(rootFolder)
       displayName: 'Use PHP version $(phpVersion)'
     - script: |
-        composer install --no-interaction --prefer-dist --ignore-platform-reqs
-        touch database/database.sqlite
+        composer install --no-interaction --prefer-dist --ignore-platform-reqs        
+      displayName: 'Instalar paquetes de composer'
+    - script: |        
         cp .env.example .env && php artisan key:generate
         php artisan test
-      displayName: 'Ejecutar pruebas PHPUnit'    
+      displayName: 'Pruebas de caja blanca'  
 
   #    - script: |
   #         screen -d -m google-chrome-stable --headless --disable-gpu --disable-dev-shm-usage --disable-software-rasterizer --remote-debugging-port=9222 http://localhost &
