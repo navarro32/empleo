@@ -50,12 +50,12 @@ stages:
         php -version   
         php -m 
         cp .env.example .env && php artisan key:generate
-        sudo touch database/database.sqlite
-        sudo chmod 777 database/database.sqlite
-        sudo chmod 755 storage/ -R
-        sudo chmod 755 vendor/ -R
+        sudo touch database/database.sqlite        
         php artisan config:cache
         unzip json.zip -d storage/app/ 
+        sudo chmod 777 database/database.sqlite
+        sudo chmod 777 storage/ -R
+        sudo chmod 777 vendor/ -R
       displayName: 'Configuración de Laravel'  
     - script: | 
         php artisan migrate:fresh --seed
